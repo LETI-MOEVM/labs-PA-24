@@ -13,10 +13,12 @@ Linux (Рекомендуется Ubuntu 18.04 или 20.04)
 ----------------------------------
 
 Скачайте [прямая ссылка для Ubuntu](http://registrationcenter-download.intel.com/akdlm/irc_nas/vcp/15532/l_opencl_p_18.1.0.015.tgz)
-``sudo apt-get install -yq cpio``
-``tar -xzf l_opencl_p_18.1.0.015.tgz``
-``sudo ./l_opencl_p_18.1.0.015/install.sh``
-Проведите установку.
+```
+sudo apt-get install -yq cpio
+tar -xzf l_opencl_p_18.1.0.015.tgz
+sudo ./l_opencl_p_18.1.0.015/install.sh
+```
+Проведите установку следуя указаниям в меню.
 
 Если у вас довольно новый процессор, например i7-8550U, то драйвер может его не поддерживать - ```clCreateContext``` вернет ошибку ```CL_DEVICE_NOT_AVAILABLE```, в таком случае поставьте свежий драйвер [отсюда](https://github.com/intel/compute-runtime/releases) (включает в т.ч. драйвер для встроенной Intel GPU).
 
@@ -42,11 +44,15 @@ https://github.com/KhronosGroup/OpenCL-Guide/blob/main/chapters/getting_started_
 Проверка окружения
 ==============================================
 
- ``mkdir build``
- ``cd build``
- ``cmake ..``
- ``make -j4``
- ``./enumDevices`` должно увидеть хотя бы одну OpenCL-платформу, например:
+ ```
+ mkdir build
+ cd build
+ cmake ..
+ make -j4
+ ./enumDevices
+ ```
+ 
+ Программа должна увидеть хотя бы одну OpenCL-платформу, например:
 
 ```
 Number of OpenCL platforms: 1
